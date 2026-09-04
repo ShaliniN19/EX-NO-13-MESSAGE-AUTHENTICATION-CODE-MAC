@@ -1,5 +1,6 @@
 # EX-NO-13-MESSAGE-AUTHENTICATION-CODE-MAC
-
+## NAME: SHALINI N
+## REG NO: 212224040305
 ## AIM:
 To implement MESSAGE AUTHENTICATION CODE(MAC)
 
@@ -26,9 +27,32 @@ To implement MESSAGE AUTHENTICATION CODE(MAC)
 
 ## Program:
 
+#include <stdio.h>
+#include <string.h>
 
+int main()
+{
+    char message[100], key[100];
+    unsigned long mac = 0;
+    int i;
+
+    printf("Enter message: ");
+    scanf("%s", message);
+
+    printf("Enter secret key: ");
+    scanf("%s", key);
+
+    for (i = 0; message[i] != '\0'; i++)
+        mac = mac + message[i] * key[i % strlen(key)];
+
+    printf("Generated MAC: %lu\n", mac);
+
+    return 0;
+}
 
 ## Output:
+
+<img width="1425" height="532" alt="image" src="https://github.com/user-attachments/assets/db2fb011-0465-4228-9325-8a895d6aa6c6" />
 
 
 ## Result:
